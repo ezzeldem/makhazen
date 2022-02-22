@@ -1,0 +1,958 @@
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: unset;
+    font-size: unset;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+// var 
+$red-color:#A71C45;
+$white-color:#fff;
+$gray-color:#525252;
+$gray-2-color:#AFAFAF;
+$black-color:#000;
+$black-light-color:#363636;
+$bink-color:#C66C85;
+$bink-2-color:#D9A1B1;
+$brown-color:#707070;
+$bink-3-color:#fef5f5;
+// var
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.transetion-4 {
+    transition: .4s all ease-in-out;
+}
+
+.pad-top {
+    padding: 120px 0 0;
+}
+
+
+
+.prag {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba($gray-color, 1);
+}
+
+.link-contect {
+    .link-a {
+        background-color: rgba($white-color, 1);
+        font-size: 16px;
+        font-weight: 700;
+        color: rgba($gray-color, 1);
+        display: inline-block;
+        padding: 17px 40px;
+        border-radius: 50px;
+        border: 1px solid rgba($white-color, 1);
+        @extend.transetion-4;
+        &:hover {
+            color: rgba($white-color, 1);
+            background-color: transparent;
+        }
+    }
+}
+
+.section-title {
+    text-align: center;
+    margin: 0 0 70px;
+    .section-title-h {
+        font-size: 30px;
+        font-weight: 700;
+        color: rgba($gray-color, 1);
+    }
+}
+
+.home-page {
+    .nav-bar-div {
+        background-color: transparent;
+        box-shadow: unset;
+    }
+}
+
+// start portfolio-box
+.portfolio-box {
+    position: relative;
+    margin: 20px 0 0;
+    .portfolio-box-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999999;
+        bottom: 0;
+    }
+    &:hover {
+        .portfolio-img {
+            .portfolio-box-detalise {
+                opacity: 1;
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    .portfolio-img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 274px;
+        display: flex;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+        .portfolio-box-detalise {
+            font-size: 18px;
+            color: rgba($white-color, 1);
+            z-index: 888;
+            font-weight: 700;
+            opacity: 0;
+            @extend.transetion-4;
+        }
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            content: "";
+            z-index: -1;
+            background-color: rgba($gray-color, .7);
+            opacity: 0;
+            @extend.transetion-4;
+        }
+    }
+    .portfolio-detials {
+        padding: 24px 30px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 1px solid rgba($gray-color, .5);
+        border-left: 1px solid rgba($gray-color, .5);
+        border-right: 1px solid rgba($gray-color, .5);
+        .type-portfolio-box {
+            color: rgba($red-color, 1);
+            font-size: 14px;
+            margin: 0 0 10px;
+            font-weight: 500;
+        }
+        .name-portfolio {
+            font-size: 18px;
+            color: rgba($gray-color, 1);
+            font-weight: 600;
+        }
+    }
+}
+
+// end portfolio-box
+// start header
+.nav-bar-div {
+    background-color: rgba($red-color, 1);
+    padding: 23px 0;
+    z-index: 4;
+    box-shadow: 0 0 10px rgba($black-color, .5);
+    position: relative;
+    .menu-icon {
+        display: none;
+    }
+    .nav-ul {
+        height: 100%;
+        .close-icon {
+            display: none;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+            li {
+                margin: 0 15px;
+                a {
+                    color: rgba($white-color, 1);
+                    font-weight: 600;
+                    font-size: 16px;
+                    position: relative;
+                    padding: 0 0 7px;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        bottom: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: rgba($white-color, 1);
+                        left: 0;
+                        @extend.transetion-4;
+                    }
+                    &:hover {
+                        &::after {
+                            width: 26px;
+                        }
+                    }
+                }
+                .home {
+                    &::after {
+                        display: none;
+                    }
+                }
+                .active {
+                    &::after {
+                        width: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// end header
+//start intro-section
+.intro-section {
+    padding: 50px 0 110px 0;
+    z-index: 1;
+    position: relative;
+    .intro-img-box {
+        .intro-img {
+            animation: moving 25s infinite ease-in-out;
+        }
+    }
+    &::after {
+        background-image: url('../img/Path 255.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 720.82px;
+        content: "";
+        position: absolute;
+        top: -87px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    .intro-content {
+        .intro-welcome-title {
+            color: rgba($white-color, 1);
+            font-size: 20px;
+            margin: 0 0 12px;
+            font-weight: 500;
+        }
+        .intro-titel {
+            font-size: 40px;
+            color: rgba($white-color, 1);
+            font-weight: 700;
+            margin: 0 0 18px;
+        }
+        .intro-prag {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba($white-color, 1);
+            max-width: 498px;
+            margin: 0 0 25px;
+        }
+    }
+}
+
+// end intro-section
+// start mission-section
+.mission-section {
+    padding: 20px 0 0 ;
+    .mission-slider {
+        .mission-slider-item {
+            width: calc(100% - 10px) !important;
+            .miission-content {
+                .mission-title {
+                    font-size: 18px;
+                    color: rgba($black-color, 1);
+                    font-weight: 700;
+                }
+                .prag {
+                    max-width: 259px;
+                }
+            }
+        }
+    }
+}
+
+// end mission-section
+// start journey-section
+.journey-section {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0 133px;
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url('../img/Bg.png');
+        background-size: cover;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-position: center;
+        right: 0;
+        height: 383.55px;
+    }
+    .journey-ul {
+        margin: 0 0px 0 41px;
+        position: relative;
+        .journey-ul-item {
+            padding: 0 0 0 30px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 2px;
+                height: 100%;
+                top: 0;
+                bottom: 0;
+                background-color: rgba($red-color, 1);
+            }
+            li {
+                position: relative;
+                margin: 20px 0 0;
+                z-index: 888888;
+                min-height: 70px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -37px;
+                    width: 16px;
+                    height: 16px;
+                    top: 0;
+                    border-radius: 50%;
+                    background-color: rgba($bink-color, 1);
+                    box-shadow: 0 0 0px 6px rgba($bink-2-color, 1);
+                    z-index: 9999;
+                }
+                &:first-of-type {
+                    margin: 0;
+                }
+                &:last-of-type {
+                    &::after {
+                        z-index: 99;
+                        content: "";
+                        position: absolute;
+                        left: -32px;
+                        width: 7px;
+                        height: 100%;
+                        top: 0;
+                        bottom: 0;
+                        background-color: rgba($bink-3-color, 1);
+                    }
+                }
+                .journey-date {
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: rgba($gray-color, 1);
+                    margin: 0 0 8px;
+                }
+                .prag {
+                    max-width: 347px;
+                }
+            }
+        }
+    }
+}
+
+// end journey-section
+// start services-section
+.services-section {
+    .servic-img {
+        margin: 55px 0;
+    }
+    .servic-content {
+        .number-servic {
+            color: rgba($red-color, 1);
+            font-size: 30px;
+            font-weight: 700;
+            margin: 0 0 15px;
+        }
+        .name-servic {
+            color: rgba($red-color, 1);
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0 0 15px;
+        }
+        .prag-servic {
+            max-width: 555px;
+            font-size: 20px;
+        }
+    }
+}
+
+// end services-section
+// start partners-section
+.partners-section {
+    .partners-slider {
+        .partners-slider-item {
+            margin: 0 20px;
+            .slider-img {
+                width: calc(100% - 38px) !important;
+                height: auto;
+            }
+        }
+    }
+}
+
+// end partners-section
+// strat portfolio-contact-section
+.portfolio-contact-section {
+
+
+
+    background: linear-gradient(180deg, #fdeff2 0%, white 100%);
+    position: relative;
+    margin: 250px 0 0;
+
+    &::after{
+    top: -171px;
+    left: 0;
+    right: 0;
+    content: "";
+    background-repeat: no-repeat;
+    background-image: url('../img/Oval.png');
+    height: 171px;
+    background-size: cover;
+    position: absolute;
+    z-index: 9999;
+    background-position: center;
+
+    }
+
+
+
+
+
+    // start portfolio-section
+    .portfolio-section {
+        .portfolio-slider {
+            .portfolio-slider-itme {
+                width: calc(100% - 20px) !important;
+            }
+        }
+        .link-contect {
+            text-align: center;
+            margin-top: 60px;
+            .link-a {
+                color: rgba($red-color, 1);
+                background-color: transparent;
+                border-color: rgba($red-color, 1);
+                &:hover {
+                    color: rgba($gray-color, 1);
+                    background-color: transparent;
+                    border-color: rgba($gray-color, 1);
+                    box-shadow: 0 6px 10px rgba($gray-color, .2);
+                }
+            }
+        }
+    }
+    // end portfolio-section
+    // satrt contact-section
+    .contact-section {
+        margin: 0 0 120px;
+        .contact-ul {
+            .contact-li {
+                position: relative;
+                padding: 0 0 0 50px;
+                margin: 25px 0;
+                &::after {
+                    color: rgba($red-color, 1);
+                    top: -7px;
+                    font-size: 25px;
+                    left: 0;
+                    position: absolute;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                }
+                .contact-li-lable {
+                    margin: 4px 0;
+                    font-size: 16px;
+                    color: rgba($gray-2-color, 1);
+                }
+                .contact-li-h4 {
+                    font-weight: 500;
+                    max-width: 348px;
+                    font-size: 16px;
+                    color: rgba($black-light-color, 1);
+                    @extend.transetion-4;
+                    &:hover {
+                        color: rgba($red-color, 1);
+                    }
+                }
+            }
+            .diraction-p-name {
+                &::after {
+                    content: "\f3c5";
+                }
+            }
+            .email-p-name {
+                &::after {
+                    content: "\f0e0";
+                }
+            }
+            .phone-p-name {
+                &::after {
+                    content: "\f095";
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    // end contact-section
+}
+
+// end portfolio-contact-section
+//start min-footer
+.min-footer-section {
+    background-color: rgba($red-color, 1);
+    padding: 40px 0;
+    .footer-contact {
+        .footer-prag {
+            color: rgba($white-color, .7);
+            font-size: 14px;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        .footer-sochila {
+            justify-content: center;
+            li {
+                margin: 0 20px;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -18px;
+                    width: 2px;
+                    top:0;
+                    height: 100%;
+                    background-color: rgba($white-color, .7);
+                }
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+                a {
+                    color: rgba($white-color, 1);
+                    position: relative;
+                    font-size: 14px;
+                    @extend.transetion-4;
+                    padding: 0 0 0 30px;
+                    &:hover {
+                        color: rgba($white-color, .7);
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        width: 23.81px;
+                        height: 23.81px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+                .face-boock {
+                    &::after {
+                        background-image: url('../img/facebook (1).svg');
+                    }
+                }
+                .twitter {
+                    &::after {
+                        background-image: url('../img/twitter (1).svg');
+                    }
+                }
+            }
+        }
+    }
+}
+
+//end min-footer
+//strat copy-right footer
+.copy-footer {
+    background-color: rgba($brown-color, 1);
+    padding: 18px 0;
+    text-align: center;
+    .copy-right {
+        color: rgba($white-color, 1);
+        font-size: 14px;
+        font-weight: 500;
+        a {
+            color: rgba($white-color, 1);
+            @extend.transetion-4;
+            &:hover {
+                color: rgba($bink-color, 1);
+            }
+        }
+    }
+}
+
+//end copy-right footer
+// start media 1200
+@media(max-width:1200px) {
+    .nav-bar-div {
+        .nav-ul {
+            ul {
+                li {
+                    margin: 0 13px;
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .portfolio-box {
+        .portfolio-detials {
+            padding: 21px 13px;
+            .name-portfolio {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+// end media 1200
+// start media 992px
+@media(max-width:992px) {
+    .link-contect {
+        .link-a {
+            font-size: 14px;
+            padding: 15px 36px;
+        }
+    }
+    .pad-top {
+        padding: 30px 0 ;
+    }
+    .intro-section {
+        padding: 50px 0 89px 0;
+        &::after {
+            height: 611.82px;
+        }
+        .intro-content {
+            .intro-welcome-title {
+                font-size: 15px;
+            }
+            .intro-titel {
+                font-size: 25px;
+            }
+            .intro-prag {
+                font-size: 14px;
+            }
+        }
+    }
+    .journey-section {
+        .journey-img {
+            text-align: center;
+            margin: 0 0 30px;
+        }
+        .journey-ul {
+            text-align: center;
+            .journey-ul-item {
+                display: inline-block;
+                text-align: left;
+                li {
+                    &:last-of-type {
+                        &::after {
+                            background-color: rgba($white-color, 1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mission-section {
+        margin: 30px 0;
+        .mission-slider {
+            .mission-slider-item {
+                .miission-content {
+                }
+            }
+        }
+    }
+    .services-section {
+        .servic-content {
+            .number-servic {
+                font-size: 18px;
+            }
+            .name-servic {
+                font-size: 20px;
+            }
+            .prag-servic {
+                font-size: 14px;
+            }
+        }
+    }
+    .portfolio-box {
+        .portfolio-img {
+            height: 230px;
+        }
+    }
+}
+
+// end media 992px
+// start media 772px
+@media(max-width:772px) {
+    .section-title {
+        .section-title-h {
+            font-size: 25px;
+        }
+    }
+    .order-over {
+        order: 2;
+    }
+    .margin-ttt {
+        margin: 50px 0 0;
+    }
+    .nav-bar-div {
+        .menu-icon {
+            display: block;
+            text-align: right;
+            i {
+                color: rgba($white-color, 1);
+                cursor: pointer;
+                font-size: 30px;
+            }
+        }
+        .nav-ul {
+            position: fixed;
+            top: 0;
+            right: -700px;
+            bottom: 0;
+            background-color: rgba($red-color, 1);
+            width: 375px;
+            text-align: center;
+            padding-top: 50px;
+            box-shadow: -6px 0px 15px rgba($black-color, .5);
+            transition: .6s all ease-in-out;
+            .close-icon {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 19px 29px;
+                i {
+                    color: rgba($white-color, 1);
+                    cursor: pointer;
+                    font-size: 30px;
+                }
+            }
+            ul {
+                display: block;
+                li {
+                    margin: 20px 0;
+                    a {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+    .intro-section {
+        padding: 33px 0 89px 0;
+        .intro-content {
+            text-align: center;
+            margin: 0 0 38px;
+        }
+        .intro-img-box {
+            .intro-img {
+                animation: unset;
+            }
+        }
+    }
+    .portfolio-contact-section {
+        .portfolio-section {
+            .portfolio-slider {
+                .portfolio-slider-itme {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+    .journey-section {
+        &::after {
+            bottom: 39px;
+        }
+    }
+    .portfolio-box {
+        .portfolio-img {
+            .portfolio-box-detalise {
+                font-size: 11px;
+            }
+        }
+    }
+
+
+    .mission-section {
+        margin: 30px 0;
+        .mission-slider {
+            .mission-slider-item {
+                .miission-content {
+                    .mission-title{
+                        margin: 10px 0;
+                    }
+                    .prag {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .portfolio-contact-section{
+         .contact-section{
+              .contact-ul{
+                   .contact-li{
+                        .contact-li-h4{
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+    // Portfolio pag
+    .porto-title {
+        .porto-title-h1 {
+            font-size: 30px !important;
+        }
+        .Portfolio-prag-titel {
+            font-size: 16px !important;
+        }
+    }
+    // Portfolio pag
+}
+
+// end media 772px
+
+// satrt media 542px
+@media(max-width:542px) {
+    .nav-bar-div {
+        .nav-ul {
+            width: 233px;
+        }
+    }
+    .portfolio-box {
+        .portfolio-img {
+            height: 150px;
+        }
+    }
+    .services-section {
+        .servic-img-conte{
+            display: flex;
+            height: 100%;
+        }
+        .servic-content {
+            .name-servic {
+                font-size: 17px;
+            }
+            .prag-servic {
+                font-size: 11px;
+            }
+        }
+    }
+
+    .journey-section{
+        &::after{
+            bottom: 48px;
+        }
+    }
+}
+
+// end media 542px
+
+
+// start media 1550px
+
+@media(min-width: 1550px) {
+    .intro-section{
+        &::after{
+            height: 810px;
+        }
+    }
+
+    .portfolio-contact-section{
+        &::after {
+            height: 192px;
+            top: -192px;
+        }
+    }
+}
+
+
+
+
+
+// keyframes
+@keyframes moving {
+    0%,
+    100% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translatey(-25px) translateX(52px)
+    }
+}
+
+.right-0 {
+    right: 0 !important;
+}
+
+.over-lay {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    left: 0;
+    bottom: 0;
+    background-color: rgba($brown-color, .3);
+    width: 100%;
+    display: none;
+}
+
+.over-la {
+    overflow-y: hidden;
+}
+
+// Portfolio pag
+.porto-title {
+    margin: 50px 0;
+    text-align: center;
+    .porto-title-h1 {
+        font-size: 40px;
+        font-weight: 600;
+        color: rgba($red-color, 1);
+        margin: 0 0 20px;
+    }
+    .Portfolio-prag-titel {
+        font-size: 25px;
+        max-width: 853px;
+        margin: 0 auto;
+    }
+}
+
+// Portfolio pag
